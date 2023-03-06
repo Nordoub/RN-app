@@ -1,12 +1,17 @@
 export default {
-    // primary: "#fc5c65",
-    // secondary: "#4ecdc4",
-    // black: "#000",
-    // white: "#fff",
-    // medium: "#6e6969",
-    // light: "#f8f4f4",
-    // dark: "#0c0c0c",
-    // danger: "#ff5252",
-    primary: "#1caeff",
-  };
-  
+  // primary: "#fc5c65",
+  // secondary: "#4ecdc4",
+  // black: "#000",
+  // white: "#fff",
+  // medium: "#6e6969",
+  // light: "#f8f4f4",
+  // dark: "#0c0c0c",
+  // danger: "#ff5252",
+  primary: "#1caeff",
+  verylightgrey: "#f8fafb",
+  lightgrey: "#f8f4f4",
+  grey: "#eff1f6",
+  darkgrey: "#e2e4e9",
+  verydarkgrey: "gray",
+  white: "#ffffff",
+};

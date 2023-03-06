@@ -4,6 +4,12 @@ const getAllProducts = async () => {
   const allProducts = await api.get("/products");
   console.log(allProducts.data);
 };
+const getCertainAmountOfProducts = async (amount) => {
+  const products = await api.get(`/products?limit=${amount}`);
+  // console.log(products.data);
+  return products.data;
+};
+
 const getProduct = async (id) => {
   const product = await api.get(`/products/${id}`);
   console.log(product.data);
@@ -32,6 +38,7 @@ const deleteProduct = async (id) => {
 export {
   getAllProducts,
   getProduct,
+  getCertainAmountOfProducts,
   getAllCategories,
   getProductsFromCategory,
   addProduct,
