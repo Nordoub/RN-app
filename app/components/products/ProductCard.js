@@ -45,8 +45,8 @@ export default ProductCard;
 const styles = StyleSheet.create({
   container: {
     width: "49%",
-    borderColor: "cyan",
-    borderWidth: 1,
+    // borderColor: "cyan",
+    // borderWidth: 1,
     borderRadius: 10,
     alignItems: "center",
     // padding: 10,
@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   textContainer: {
-    backgroundColor: "cyan",
+    // backgroundColor: colors.beige,
+    // borderBottomColor: colors.grey,
+    // borderBottomWidth: 2,
     padding: 10,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,

@@ -14,4 +14,11 @@ export default {
   darkgrey: "#e2e4e9",
   verydarkgrey: "gray",
   white: "#ffffff",
+  blue: "cornflowerblue",
+  lightblue: "deepskyblue",
+  beige: "cornsilk",
+  lightbeige: "ivory",
+  gold: "darkgoldenrod",
+  cyan: "cyan",
+  borderColor: "mistyrose",
 };

@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import global from "../../shared/styles";
+import AppText from "../AppText";
 
 const HeaderText = ({ title, style }) => {
   return (
     <View>
-      <Text style={[global.text, styles.header, style]}>{title}</Text>
+      <AppText style={[styles.header, style]}>{title}</AppText>
     </View>
   );
 };
@@ -14,7 +15,7 @@ export default HeaderText;
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 28,
-    fontWeight: "bold",
+    fontSize: 24,
+    // fontWeight: "bold",
   },
 });
