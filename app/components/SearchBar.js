@@ -14,7 +14,6 @@ const SearchBar = ({ placeholder }) => {
         style={styles.searchIcon}
       />
       <AppTextInput style={styles.textInput} placeholder={placeholder} />
-      {/* <Feather name="x" size={24} color={"grey"} /> */}
     </View>
   );
 };
@@ -27,8 +26,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     padding: 10,
     borderRadius: 25,
-    // borderColor: "black",
-    // borderWidth: 1,
   },
   textInput: {
     flex: 1,

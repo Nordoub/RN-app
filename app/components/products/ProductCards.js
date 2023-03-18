@@ -13,6 +13,7 @@ const ProductCards = ({ title, products }) => {
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         {products.map((product) => (
           <ProductCard
+          key={product.id}
             title={product.title}
             description={product.description}
             imgUrl={product.image}

@@ -4,20 +4,29 @@ import { TouchableOpacity } from "react-native";
 import global from "../shared/styles";
 import colors from "../shared/colors";
 
-const AppButton = ({ title, style, onPress, isSecondary = false }) => {
+const AppButton = ({
+  title,
+  style,
+  textStyle,
+  onPress,
+  isSecondary = false,
+  ...otherProps
+}) => {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPressIn={onPress}
       style={[
         styles.container,
         isSecondary ? styles.secondaryButton : styles.primaryButton,
         style,
       ]}
+      {...otherProps}
     >
       <Text
         style={[
           global.text,
           isSecondary ? styles.secondaryText : styles.primaryText,
+          textStyle,
         ]}
       >
         {title}
@@ -33,8 +42,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     justifyContent: "center",
-    width: "90%",
-    borderRadius: 25,
+    // width: "90%",
+    borderRadius: 5,
     padding: 10,
     margin: 10,
   },

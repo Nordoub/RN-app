@@ -6,5 +6,6 @@ export default {
   text: {
     fontSize: 14,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+    // opacity: 0.7,
   },
 };
