@@ -1,18 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { Controller } from "react-hook-form";
 import AppTextInput from "../AppTextInput";
-import { capitalize, formatPlaceholder } from "../../shared/utils";
+import { formatPlaceholder } from "../../shared/utils";
 import errorMessages from "../../shared/errors";
 import AppText from "../AppText";
+import AppButton from "../AppButton";
+import ErrorMessage from "../ErrorMessage";
 
-const FormTextInput = ({ name, control, errors, rules, ...otherProps }) => {
+const FormTextInput = ({ name, control, rules = {}, ...otherProps }) => {
   return (
-    <>
-      <Controller
-        control={control}
-        rules={rules}
-        render={({ field: { onChange, onBlur, value } }) => (
+    <Controller
+      control={control}
+      rules={rules}
+      render={({
+        field: { onChange, onBlur, value },
+        fieldState: { error },
+      }) => (
+        <>
           <AppTextInput
             style={styles.input}
             onBlur={onBlur}
@@ -21,13 +26,11 @@ const FormTextInput = ({ name, control, errors, rules, ...otherProps }) => {
             placeholder={formatPlaceholder(name)}
             {...otherProps}
           />
-        )}
-        name={name}
-      />
-      {errors[name] && (
-        <AppText style={styles.error}>{errorMessages[name]}</AppText>
+          {error && <ErrorMessage error={error.message}/>}
+        </>
       )}
-    </>
+      name={name}
+    />
   );
 };
 

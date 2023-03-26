@@ -49,7 +49,6 @@ export default AppTextInput;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    // backgroundColor: "green",
     backgroundColor: colors.darkgrey,
     padding: 15,
     marginVertical: 5,
@@ -57,10 +56,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: "100%",
-    // backgroundColor: colors.grey,
-    // padding: 15,
-    // marginVertical: 5,
-    // borderRadius: 7,
   },
   icon: {
     position: "absolute",

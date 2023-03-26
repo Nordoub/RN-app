@@ -14,7 +14,10 @@ const initialValues = {
 };
 
 const LoginScreen = () => {
-  const onSubmit = (data) => console.log(data);
+  // simulate an asynchronous API call
+  const onSubmit = async () =>
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return (
     <Screen>
       <ProductHeader title={"Welcome back!"} style={styles.header} />
