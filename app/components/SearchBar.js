@@ -13,7 +13,7 @@ const SearchBar = ({ placeholder }) => {
         color={"grey"}
         style={styles.searchIcon}
       />
-      <AppTextInput style={styles.textInput} placeholder={placeholder} />
+      <AppTextInput textStyle={styles.textInput} placeholder={placeholder} />
     </View>
   );
 };
@@ -21,14 +21,18 @@ const SearchBar = ({ placeholder }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    width: "100%",
-    backgroundColor: colors.lightgrey,
+    // width: "100%",
+    flex: 1,
+    backgroundColor: "white",
+    // borderWidth: 0.5,
+    borderColor: "lightgrey",
     alignSelf: "center",
-    padding: 10,
-    borderRadius: 25,
+    padding: 5,
+    marginHorizontal: 0,
+    borderRadius: 5,
   },
   textInput: {
-    flex: 1,
+    fontSize: 16,
   },
   searchIcon: {
     paddingRight: 10,

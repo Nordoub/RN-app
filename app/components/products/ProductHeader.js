@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Divider from "../Divider";
 import HeaderText from "../text/HeaderText";
-import colors from "../../shared/colors";
 
 const ProductHeader = ({ title, style }) => {
   return (
@@ -30,6 +29,6 @@ const styles = StyleSheet.create({
   },
   headerText: {
     opacity: 0.5,
-    fontWeight: "400",
+    fontWeight: "bold",
   },
 });

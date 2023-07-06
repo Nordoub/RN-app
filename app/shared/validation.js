@@ -1,4 +1,18 @@
 export default {
+  firstName: {
+    maxLength: {
+      value: 255,
+      message: "More than 255 characters is not allowed.",
+    },
+    minLength: { value: 2, message: "Less than 2 character is not allowed." },
+  },
+  lastName: {
+    maxLength: {
+      value: 255,
+      message: "More than 255 characters is not allowed.",
+    },
+    minLength: { value: 2, message: "Less than 2 character is not allowed." },
+  },
   email: {
     required: true,
     maxLength: {

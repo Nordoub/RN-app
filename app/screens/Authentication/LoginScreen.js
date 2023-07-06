@@ -7,28 +7,26 @@ import ProductHeader from "../../components/products/ProductHeader";
 import AppText from "../../components/AppText";
 import validation from "../../shared/validation";
 import colors from "../../shared/colors";
+import AppButton from "../../components/AppButton";
 
 const initialValues = {
   email: "",
   password: "",
 };
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   // simulate an asynchronous API call
-  const onSubmit = async () =>
+  const onSubmit = async () => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-
+    navigation.navigate("Main", { screen: "Home" });
+  };
   return (
     <Screen>
-      <ProductHeader title={"Welcome back!"} style={styles.header} />
+      <ProductHeader title={"Welcome back!"} />
       <AppText style={styles.description}>
         We are happy to have you back!
       </AppText>
-      <Form
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        style={styles.form}
-      >
+      <Form initialValues={initialValues} onSubmit={onSubmit}>
         <AppText style={{ fontWeight: "bold" }}>Account information</AppText>
         <FormTextInput name="email" rules={validation.email} />
         <FormTextInput
@@ -36,7 +34,12 @@ const LoginScreen = () => {
           rules={validation.password}
           secureTextEntry
         />
-        <AppText style={styles.forgotPassword}>Forgot password?</AppText>
+        <AppButton
+          title="Forgot password?"
+          onPress={() => navigation.navigate("Register")}
+          style={styles.forgotPassword}
+          isSecondary
+        />
       </Form>
     </Screen>
   );
@@ -45,19 +48,15 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  form: {
-    flex: 0.8,
-    justifyContent: "center",
-  },
-  header: {
-    fontWeight: "bold",
-  },
   description: {
     alignSelf: "center",
   },
   forgotPassword: {
     color: colors.primary,
+    backgroundColor: colors.background,
     fontWeight: "bold",
     alignSelf: "center",
+    borderWidth: 0,
+    margin: 0,
   },
 });

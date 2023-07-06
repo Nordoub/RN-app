@@ -40,7 +40,10 @@ export default function Form({
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 0.8,
+    justifyContent: "center",
+  },
   submit: {
     width: "100%",
   },

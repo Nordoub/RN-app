@@ -6,19 +6,19 @@ import LoginScreen from "../screens/Authentication/LoginScreen";
 import RegisterScreen from "../screens/Authentication/RegisterScreen";
 import WelcomeScreen from "../screens/Onboarding/WelcomeScreen";
 import OnboardingScreen from "../screens/Onboarding/OnboardingScreen";
+import HomeScreen from "../screens/HomeScreen";
+import AuthStack from "./AuthStack";
+import TabsNavigator from "./TabsNavigator";
+import screenOptions from "../shared/screenOptions";
 
 const Stack = createNativeStackNavigator();
 
 const NavigationStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Onboarding"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Navigator initialRouteName="Auth" screenOptions={screenOptions}>
+        <Stack.Screen name="Auth" component={AuthStack} />
+        <Stack.Screen name="Main" component={TabsNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

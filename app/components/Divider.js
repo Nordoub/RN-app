@@ -1,18 +1,17 @@
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { View } from "react-native";
-import colors from "../shared/colors";
 
-const Divider = ({ style }) => {
-  return (
-    <View
-      style={{
-        borderBottomColor: colors.grey,
-        borderBottomWidth: 2,
-        // marginVertical: 5,
-        ...style,
-      }}
-    />
-  );
+const Divider = ({style}) => {
+  return <View style={[$.line, style]}></View>;
 };
 
 export default Divider;
+
+const $ = StyleSheet.create({
+  line: {
+    borderWidth: 0.5,
+    opacity: 0.3,
+    borderColor: "grey",
+    marginHorizontal: 20,
+  },
+});

@@ -3,7 +3,7 @@ import NavigationStack from "./app/navigation/NavigationStack";
 import HomeScreen from "./app/screens/HomeScreen";
 
 export default function App() {
-  return <NavigationStack />
+  return <NavigationStack />;
 }
 
 const styles = StyleSheet.create({

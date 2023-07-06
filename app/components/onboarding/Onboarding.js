@@ -14,7 +14,7 @@ import ProductHeader from "../products/ProductHeader";
 const Onboarding = ({ content }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const flashListRef = useRef(null);
-  const navigation = useNavigation();
+  const { navigate } = useNavigation();
   const { width, height } = useWindowDimensions();
 
   useEffect(() => {
@@ -26,52 +26,38 @@ const Onboarding = ({ content }) => {
 
   const next = () => setCurrentStep((step) => step + 1);
   const previous = () => setCurrentStep((step) => step - 1);
-  const finish = () => navigation.navigate("Login");
+  const finish = () => navigate("Login");
 
   const NextButton = () => (
     <AppButton
       title={"Next >"}
       onPress={next}
-      style={styles.nextButton}
+      style={$.nextButton}
       isSecondary
     />
-  );
-  const FinishButton = () => (
-    <AppButton title={"Finish"} onPress={finish} style={styles.nextButton} />
   );
   const PrevButton = () => (
     <AppButton
       title={"< Previous"}
       onPress={previous}
-      style={styles.prevButton}
+      style={$.prevButton}
       isSecondary
     />
   );
+  const FinishButton = () => (
+    <AppButton title={"Finish"} onPress={finish} style={$.nextButton} />
+  );
 
   return (
-    <Screen style={styles.screen}>
-      {/* <Logo source={require("../../../assets/logo.png")} style={styles.logo} /> */}
+    <Screen style={$.screen}>
       <FlashList
         ref={flashListRef}
         renderItem={({ item }) => (
-          <View
-            style={{
-              width,
-              height,
-              alignItems: "center",
-              padding: 25,
-            }}
-          >
-            {item.svg}
-            <View
-              style={{
-                alignSelf: "center",
-                // justifyContent: "center",
-                // flex: 0.5,
-              }}
-            >
+          <View style={[$.listItem, {width, height}]}>
+            <View style={{ flex: 0.3 }}>{item.svg}</View>
+            <View style={$.text}>
               <ProductHeader title={item.title} />
-              <AppText>{item.description}</AppText>
+              <AppText style={$.description}>{item.description}</AppText>
             </View>
           </View>
         )}
@@ -87,7 +73,7 @@ const Onboarding = ({ content }) => {
       <ProgressSteps
         totalSteps={content.length}
         currentStep={currentStep}
-        style={styles.stepper}
+        style={$.stepper}
       />
     </Screen>
   );
@@ -95,7 +81,7 @@ const Onboarding = ({ content }) => {
 
 export default Onboarding;
 
-const styles = StyleSheet.create({
+const $ = StyleSheet.create({
   screen: {
     padding: 0,
   },
@@ -120,4 +106,16 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 100,
   },
+  description: {
+    fontSize: 16,
+    textAlign: "center",
+  },
+  listItem: {
+      alignItems: "center",
+      padding: 25,
+  },
+  text: {
+    alignSelf: "center",
+    flex: 0.7,
+  }
 });

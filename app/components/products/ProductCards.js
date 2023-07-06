@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import ProductCard from "./ProductCard";
 import HeaderText from "../text/HeaderText";
@@ -8,12 +8,20 @@ import ProductHeader from "./ProductHeader";
 const ProductCards = ({ title, products }) => {
   return (
     <View>
-      {/* <HeaderText title={title} style={styles.header} /> */}
-      <ProductHeader title={title} />
+      <View style={$.textHeaderRow}>
+        <HeaderText title={title} style={[$.header, $.leftTextHeader]} />
+        <TouchableOpacity>
+          <HeaderText
+            title={"See more"}
+            style={[$.header, $.rightTextHeader]}
+          />
+        </TouchableOpacity>
+      </View>
+      {/* <ProductHeader title={title} /> */}
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
         {products.map((product) => (
           <ProductCard
-          key={product.id}
+            key={product.id}
             title={product.title}
             description={product.description}
             imgUrl={product.image}
@@ -27,11 +35,25 @@ const ProductCards = ({ title, products }) => {
 
 export default ProductCards;
 
-const styles = StyleSheet.create({
-  // header: {
-  //   marginTop: 10,
-  //   marginBottom: 5,
-  //   opacity: 0.7,
-  //   fontSize: 22,
-  // },
+const $ = StyleSheet.create({
+  header: {
+    // marginTop: 10,
+    // marginBottom: 5,
+    marginTop: 10,
+    marginBottom: 10,
+    fontWeight: "400",
+    // opacity: 0.7,
+    // fontSize: 22,
+    // backgroundColor: "yellow",
+  },
+  leftTextHeader: {},
+  rightTextHeader: {
+    fontSize: 16,
+    opacity: 0.5,
+  },
+  textHeaderRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
 });

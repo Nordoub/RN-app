@@ -6,7 +6,8 @@ import { Entypo } from "@expo/vector-icons";
 
 const AppTextInput = ({
   children,
-  style,
+  containerStyle,
+  textStyle,
   secureTextEntry = false,
   ...props
 }) => {
@@ -14,9 +15,9 @@ const AppTextInput = ({
   const toggle = () => setShowPassword((value) => !value);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <TextInput
-        style={[global.text, styles.textInput, style]}
+        style={[global.text, styles.textInput, textStyle]}
         {...props}
         secureTextEntry={showPassword}
       >
@@ -49,9 +50,6 @@ export default AppTextInput;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: colors.darkgrey,
-    padding: 15,
-    marginVertical: 5,
     borderRadius: 5,
   },
   textInput: {

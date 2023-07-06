@@ -2,6 +2,7 @@ import api from "./api";
 
 const getAllProducts = async () => {
   const allProducts = await api.get("/products");
+  return allProducts.data;
 };
 const getCertainAmountOfProducts = async (amount) => {
   const products = await api.get(`/products?limit=${amount}`);

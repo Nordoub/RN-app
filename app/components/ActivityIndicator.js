@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ActivityIndicator as AC } from "react-native";
+import colors from "../shared/colors";
 
 function ActivityIndicator({ visible = false }) {
   if (!visible) return null;
@@ -16,7 +17,7 @@ export default ActivityIndicator;
 const styles = StyleSheet.create({
   overlay: {
     position: "absolute",
-    backgroundColor: "white",
+    backgroundColor: colors.backgroundColor,
     height: "100%",
     width: "100%",
     opacity: 0.6,

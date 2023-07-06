@@ -21,4 +21,6 @@ export default {
   gold: "darkgoldenrod",
   cyan: "cyan",
   borderColor: "mistyrose",
+  inverted: "white",
+  background: "#f0f2f2",
 };

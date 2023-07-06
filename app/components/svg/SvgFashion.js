@@ -2,14 +2,16 @@ import * as React from "react";
 import { View } from "react-native";
 import Svg, { Path, Ellipse, G, Circle, Rect } from "react-native-svg";
 
-function SvgFashion({ sizeInPercentage, style, ...props }) {
+function SvgFashion({ sizeInPercentage = "30%", style, ...props }) {
+  const originalWidth = 573;
+  const originalHeight = 457;
+  const aspectRatio = originalWidth / originalHeight;
+
   return (
     <View
       style={{
-        width: undefined,
         height: sizeInPercentage,
-        aspectRatio: 572.86195 / 457.17619,
-        alignSelf: "center",
+        aspectRatio,
         ...style,
       }}
     >
@@ -17,7 +19,7 @@ function SvgFashion({ sizeInPercentage, style, ...props }) {
         xmlns="http://www.w3.org/2000/svg"
         width={"100%"}
         height={"100%"}
-        viewBox="0 0 572.86195 457.17619"
+        viewBox={`0 0 ${originalWidth} ${originalHeight}`}
         {...props}
       >
         <Path

@@ -19,13 +19,6 @@ const CategorySelect = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
       />
-      {/* {productCategories.map((item, index) => (
-        <ProductChip
-          category={item.category}
-          iconName={item.iconName}
-          key={index}
-        />
-      ))} */}
     </View>
   );
 };
@@ -35,6 +28,6 @@ export default CategorySelect;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    marginVertical: 5,
+    marginTop: 5,
   },
 });
